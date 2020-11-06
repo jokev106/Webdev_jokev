@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+    return redirect()->route('partpc.index');
 });
+
+Route::resource('partpc', \App\Http\Controllers\partpc::class);
+Route::resource('providerpartpc', \App\Http\Controllers\ProvidermerkpartpcController::class);
